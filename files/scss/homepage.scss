@@ -5,16 +5,77 @@
 //  style info : トップページ
 @import "settings";
 
+
+/* -----------------------------------------------------------
+	.con_about
+----------------------------------------------------------- */
+.con_about {
+	padding-top: 10em;
+	margin-bottom: 2em;
+	.wrap_about {
+		display: flex;
+		justify-content: space-between;
+		flex-wrap: wrap;
+		.box_left {
+			width: wCon(540px,1400px);
+			.box_txt {
+				.txt {
+					margin-bottom: 1.5em;
+				}
+			}
+		}
+		.box_right {
+			width: wCon(800px,1400px);
+			.box_img {
+				display: flex;
+				justify-content: space-between;
+				flex-wrap: wrap;
+				.img {
+					width: (99% / 2);
+					position: relative;
+					&:first-child {
+						position: relative;
+						top: -4em;
+					}
+				}
+			}
+		}
+	}
+}
+
 /* -----------------------------------------------------------
 	.con_activity
 ----------------------------------------------------------- */
 .con_activity {
 	background: url(../images/home/bg_intro.jpg) no-repeat center top;
+	position: relative;
+	&::before {
+		content: "";
+		width: 420px;
+		height: 404px;
+		background: url(../images/home/bg_leaf.png) no-repeat center;
+		background-size: contain;
+		position: absolute;
+		left: 0;
+		top: 0;
+	}
+	&::after {
+		content: "";
+		width: 420px;
+		height: 404px;
+		background: url(../images/home/bg_leaf.png) no-repeat center;
+		background-size: contain;
+		position: absolute;
+		right: 0;
+		bottom: 2em;
+	}
 	.box_activity {
-		max-width: 1500px;
+		max-width: 1380px;
 		margin: auto;
-		padding: 70px 0 110px;
-		@include mq(min_max_w,1025px,1500px) {
+		padding: 70px 0 3em;
+		position: relative;
+		z-index: 2;
+		@include mq(min_max_w,1025px,1380px) {
 			width: 95%;
 		}
 		@include mq(tab) {
@@ -64,7 +125,7 @@
 					}
 					.box_txt {
 						position: absolute;
-						width: 50%;
+						width: 35%;
 						height: 100%;
 						top: 0;
 						left: 0;
@@ -99,7 +160,7 @@
 							}
 						}
 						.catch {
-							@include fsz(18);
+							@include fsz(16);
 							background: url(../images/home/deco_border_b.png) center bottom no-repeat;
 							padding-bottom: 40px;
 							margin-bottom: 1rem;
@@ -117,28 +178,18 @@
 							}
 							color: #fff;
 						}
-						svg {
-							fill: $c_yel;
-							width: 68px;
-							height: 49px;
-							@include mq(min_max_w,1025px,1280px) {
-								width: 45px;
-								height: 32px;
-							}
-							@include mq(tab_sp) {
-								width: 34px;
-								height: 24px;
-							}
-							&.play {
-								width: 105px;
-								height: 45px;
+						.img_ic {
+							margin-bottom: .7em;
+							img {
+								width: 68px;
+								max-height: 70px;
 								@include mq(min_max_w,1025px,1280px) {
-									width: 70px;
-									height: 30px;
+									width: 45px;
+									height: 32px;
 								}
 								@include mq(tab_sp) {
-									width: 52px;
-									height: 22px;
+									width: 34px;
+									height: 24px;
 								}
 							}
 						}
@@ -146,12 +197,12 @@
 							@include f_pat();
 							font-weight: normal;
 							color: $c_yel;
-							@include fsz(30);
+							@include fsz(24);
 							@include mq(tab) {
-								@include fsz(24);
+								@include fsz(20);
 							}
 							@include mq(sp) {
-								@include fsz(20);
+								@include fsz(18);
 							}
 						}
 					}
@@ -163,6 +214,65 @@
 			margin: 0 auto;
 			@include mq(sp) {
 				width: 80%;
+			}
+		}
+	}
+}
+
+/* -----------------------------------------------------------
+	.con_service
+----------------------------------------------------------- */
+.con_service {
+	padding: 3em 0 2em;
+	background: #f9f9f9;
+	border-top: 1px solid #f4f4f4;
+	border-bottom: 1px solid #f4f4f4;
+	.wrap_service {
+		width: 1820px;
+		max-width: 90%;
+		margin: auto;
+	}
+	.box_list {
+		display: flex;
+		justify-content: space-between;
+		flex-wrap: wrap;
+		&::before, &::after {
+			content: "";
+			display: block;
+			width: wCon(340px,1820px);
+			order: 1;
+			@include mq(sp) {
+				display: none;
+			}
+		}
+		.item {
+			text-align: center;
+			top: 0;
+			@include animate;
+			width: wCon(340px,1820px);
+			position: relative;
+			margin-bottom: 2em;
+			.box_txt {
+				position: absolute;
+				z-index: 2;
+				width: 100%;
+				bottom: 0;
+				left: 0;
+				padding: 1.5em .5em;
+				background: rgba(0,0,0,.6);
+				.txt_st {
+					@include f_pat();
+					@include fsz(19);
+					color: #fff;
+				}
+			}
+			&:hover {
+				top: -1em;
+				.box_txt {
+					.txt_st {
+						color: $c_yel;
+					}
+				}
 			}
 		}
 	}

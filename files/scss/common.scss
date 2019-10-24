@@ -108,7 +108,7 @@ body {
 }
 
 .container {
-  width: 1820px;
+  width: 1380px;
   max-width: 95%;
   margin: auto;
 }
@@ -121,7 +121,7 @@ body {
   }
   .con_gnav_top {
     .wrap_gnav_top {
-      width: 1480px;
+      width: 1380px;
       max-width: 95%;
       height: 100%;
       margin: auto;
@@ -130,7 +130,7 @@ body {
       flex-wrap: wrap;
       align-content: center;
       .box {
-        width: wCon(530px, 1480px);
+        width: wCon(530px, 1380px);
         display: flex;
         justify-content: flex-start;
         flex-wrap: wrap;
@@ -203,7 +203,7 @@ body {
     height: 80px;
     box-shadow: 0 6px 6px 0 rgba(0,0,0,.05);
     .wrap_gnav {
-      width: 1820px;
+      width: 1500px;
       max-width: 95%;
       margin: auto;
       position: relative;
@@ -234,13 +234,7 @@ body {
           -webkit-transform: skewX(-25deg);
           transform: skewX(-25deg);
           -webkit-animation:shine 2.5s infinite;
-            animation:shine 2.5s infinite;
-        }
-        @-webkit-keyframes shine{
-          100%{left:125%}
-        }
-        @keyframes shine{
-          100%{left:125%}
+          animation:shine 2.5s infinite;
         }
         img {
           margin-left: -3px;
@@ -256,7 +250,7 @@ body {
           display: flex;
           flex-wrap: wrap;
           align-content: center;
-          width: wCon(730px, 1820px);
+          width: wCon(630px, 1500px);
           height: 100%;
           &.left {
             justify-content: flex-end;
@@ -267,7 +261,8 @@ body {
               display: block;
               height: 100%;
               @include f_pat();
-              @include fsz(23);
+              @include fsz(22);
+              @include animate;
               &:hover {
                 color: $c_yel;
               }
@@ -461,4 +456,31 @@ table.tbl_basic {
 
 /* -----------------------------------------------------------
   #animation_wave
+----------------------------------------------------------- */
+
+
+
+/* -----------------------------------------------------------
+  #animation_shine
+----------------------------------------------------------- */
+@-webkit-keyframes shine{
+  100%{left:125%}
+}
+@keyframes shine{
+  100%{left:125%}
+}
+/* -----------------------------------------------------------
+  #animation_shine
+----------------------------------------------------------- */
+
+
+/* -----------------------------------------------------------
+  #animation_spin
+----------------------------------------------------------- */
+@-webkit-keyframes spin {
+    0%  {-webkit-transform: rotate(0deg);}
+    100% {-webkit-transform: rotate(360deg);}   
+}
+/* -----------------------------------------------------------
+  #animation_shine
 ----------------------------------------------------------- */

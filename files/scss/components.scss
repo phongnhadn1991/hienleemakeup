@@ -120,3 +120,336 @@
 	    transform: scale3d(1, 1, 1);
 	}
 }
+
+
+
+
+// MCN_SAMPLE
+.tit_st {
+	font-weight: normal;
+	margin-bottom: 2em;
+	position: relative;
+	&::before {
+		content: "";
+		background: url(../images/common/ic_logo.png) top center no-repeat;
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		width: 44px;
+		height: 44px;
+		background-size: contain;
+		-webkit-animation: spin 4s infinite linear;
+	}
+	.main {
+		@include f_pat();
+		@include fsz(40);
+		letter-spacing: .1em;
+	}
+	.sub, .sup {
+		display: block;
+		@include fsz(20);
+		text-transform: uppercase;
+	}
+	&.center {
+		padding-top: 3.7em;
+		text-align: center;
+		&::before {
+			top: 0;
+			left: 0;
+			right: 0;
+			margin: auto;
+		}
+	}
+}
+
+// Text
+.txt {
+	line-height: 1.8;
+}
+
+// Effect shine
+.shine {
+	position: relative;
+	overflow: hidden;
+	&::before {
+		position: absolute;
+		top: 0;
+		left: -120%;
+		z-index: 2;
+		display: block;
+		content: '';
+		width: 80%;
+		height: 100%;
+		background: -webkit-linear-gradient(left,rgba(255,255,255,0) 0%,rgba(255,255,255,.5) 100%);
+		background: linear-gradient(to right,rgba(255,255,255,0) 0%,rgba(255,255,255,.5) 100%);
+		-webkit-transform: skewX(-25deg);
+		transform: skewX(-25deg);
+	}
+	&:hover {
+		&::before {
+			-webkit-animation:shine 2.5s;
+			animation:shine 2.5s;
+		}
+	}
+}
+
+
+/* -----------------------------------------------------------
+	btn
+----------------------------------------------------------- */
+.btn {
+	line-height: 1;
+	letter-spacing: 2px;
+	margin-left: auto;
+	margin-right: auto;
+	@include animate();
+	&.center {
+		text-align: center;
+	}
+	a {
+		width: 100%;
+		display: block;
+		transition: all .3s ease;
+		text-decoration: none;
+		padding: 24px 0;
+		text-indent: 1em;
+		position: relative;
+		@include mq(tab) {
+			width: 100%;
+			padding: 20px 0;
+			text-indent: .5em;
+		}
+		@include mq(sp) {
+			width: 100%;
+			padding: 15px 0;
+			text-indent: .5em;
+		}
+		&:after {
+			content: '';
+			position: absolute;
+			top: 50%;
+			right: -2px;
+			-webkit-transform: translateY(-50%);
+			transform: translateY(-50%);
+			@include animate();
+			height: 1px;
+			@include cV(width,20%,15%,10%);
+		}
+		span {
+			display: block;
+			@include fsz_cha(18,14,(15 + 5.5));
+			i {
+				text-indent: 0;
+			}
+		}
+	}
+	@at-root {
+		#{&}--small {
+			max-width: 340px;
+		}
+		#{&}--large {
+			max-width: 400px;
+		}
+		#{&}--xlarge {
+			max-width: 550px;
+		}
+		#{&}__ghost {
+			border: 2px solid #fff;
+			box-sizing: border-box;
+			background: transparent;
+			position: relative;
+			overflow: hidden;
+			@include animate();
+			&:before {
+				position: absolute;
+				content: "";
+				background: #fff;
+				width: 120%;
+				height: 120%;
+				top: -10%;
+				left: -120%;
+				-webkit-transform: skew(20deg);
+				transform: skew(20deg);
+				@include animate();
+				opacity: 0;
+			}
+			a {
+				&:after {
+					background: #fff;
+				}
+			}
+			&:hover {
+				@include mq(pc) {
+					background: #fff;
+					border: 2px solid #fff;
+					&:before {
+						opacity: 1;
+						left: -10%;
+					}
+					a {
+						color: $bg_Black;
+						&:after {
+							background: $bg_Black;
+						}
+					}
+				}
+			}
+			@at-root {
+				#{&}--prm {
+					border: 2px solid $c_Black;
+					box-sizing: border-box;
+					background: transparent;
+					position: relative;
+					overflow: hidden;
+					@include animate();
+					&:before {
+						position: absolute;
+						content: "";
+						background: $c_Black;
+						width: 120%;
+						height: 120%;
+						top: -10%;
+						left: -120%;
+						-webkit-transform: skew(20deg);
+						transform: skew(20deg);
+						@include animate();
+						opacity: 0;
+					}
+					a {
+						color: $c_Black;
+						&:after {
+							background: $c_Black;
+						}
+					}
+					&:hover {
+						@include mq(pc) {
+							background: $c_yel;
+							border: 2px solid $c_yel;
+							&:before {
+								opacity: 1;
+								left: -10%;
+							}
+							a {
+								color: $c_yel;
+								&:after {
+									background: $c_yel;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		#{&}__cvn {
+			border: 2px solid $c_Pink;
+			box-sizing: border-box;
+			position: relative;
+			overflow: hidden;
+			@include animate();
+			&:before {
+				position: absolute;
+				content: "";
+				background: $c_Pink;
+				width: 120%;
+				height: 120%;
+				top: -10%;
+				left: -10%;
+				-webkit-transform: skew(20deg);
+				transform: skew(20deg);
+				@include animate();
+			}
+			a {
+				&:after {
+					background: #fff;
+					@include animate();
+				}
+			}
+			&:hover {
+				@include mq(pc) {
+					border: 2px solid $c_Pink;
+					&:before {
+						opacity: 0;
+						left: 120%;
+					}
+					a {
+						&:after {
+							background: $c_Pink;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+.btn__more {
+	@include fsz-cha(24,22,(20 + 5.5));
+	letter-spacing: 0;
+	a {
+		transition: all .3s ease;
+		color: $c_Pink;
+		line-height: 1;
+		text-decoration: none;
+		display: inline-block;
+		span {
+			position: relative;
+			&:before {
+				content: "";
+				position: absolute;
+				height: 3px;
+				width: 110%;
+				bottom: -10px;
+				left: 50%;
+				-webkit-transform: translateX(-50%);
+				transform: translateX(-50%);
+				background: $c_Pink;
+				@include animate();
+				@include mq(sp) {
+					bottom: -5px;
+				}
+			}
+		}
+		&:hover {
+			@include mq(pc) {
+				span {
+					&:before {
+						width: 0;
+					}
+				}
+			}
+		}
+	}
+}
+.btn__text {
+	font-weight: bold;
+	a {
+		transition: all .3s ease;
+		line-height: 1;
+		text-decoration: none;
+		display: inline-block;
+		span {
+			position: relative;
+			&:before {
+				content: "";
+				position: absolute;
+				height: 1px;
+				width: 100%;
+				bottom: -10px;
+				background: #fff;
+				@include animate();
+				@include mq(sp) {
+					bottom: -5px;
+				}
+			}
+		}
+		&:hover {
+			@include mq(pc) {
+				span {
+					&:before {
+						width: 0;
+					}
+				}
+			}
+		}
+	}
+}
