@@ -1,0 +1,169 @@
+@charset "utf-8";
+// CSS information
+//  file name  : homepage.css
+//  author     : Abilive
+//  style info : トップページ
+@import "settings";
+
+/* -----------------------------------------------------------
+	.con_activity
+----------------------------------------------------------- */
+.con_activity {
+	background: url(../images/home/bg_intro.jpg) no-repeat center top;
+	.box_activity {
+		max-width: 1500px;
+		margin: auto;
+		padding: 70px 0 110px;
+		@include mq(min_max_w,1025px,1500px) {
+			width: 95%;
+		}
+		@include mq(tab) {
+			width: 95%;
+		}
+		@include mq(sp) {
+			width: 100%;
+			padding: 3rem 0;
+		}
+		ul {
+			margin-bottom: 3rem;
+			@include mq(pc_tab) {
+				width: 100%;
+				overflow: hidden;
+				display: -webkit-flex;
+				display: flex;
+				-webkit-flex-wrap: wrap;
+				flex-wrap: wrap;
+				-webkit-justify-content: space-between;
+				justify-content: space-between;
+			}
+			li {
+				overflow: hidden;
+				@include mq(pc_tab) {
+					width: (100%/2-.5);
+					margin-bottom: 1%;
+				}
+				a {
+					display: block;
+					position: relative;
+					@include mq(pc) {
+						&:hover {
+							.box_txt {
+								@include mq(pc) {
+									width: 100%;
+									&:after {
+										display: none;
+									}
+								}
+							}
+						}
+					}
+					.img {
+						img {
+							width: 100%;
+						}
+					}
+					.box_txt {
+						position: absolute;
+						width: 50%;
+						height: 100%;
+						top: 0;
+						left: 0;
+						background: rgba(#686868,.88);
+						text-align: center;
+						padding-top: 10%;
+						@include animate;
+						@include mq(min_max_w,1025px,1280px) {
+							padding-top: 5%;
+						}
+						@include mq(tab) {
+							padding-top: 6%;
+						}
+						@include mq(sp) {
+							padding-top: 5%;
+						}
+						&:after {
+							content: "";
+							width: 0;
+							height: 0;
+							border-style: solid;
+							border-width: 13px 0 13px 27px;
+							border-color: transparent transparent transparent rgba(#686868,.88);
+							position: absolute;
+							right: -27px;
+							top: 50%;
+							margin-top: -13px;
+							@include mq(sp) {
+								border-width: 9px 0 9px 20px;
+								right: -20px;
+								margin-top: -4px;
+							}
+						}
+						.catch {
+							@include fsz(18);
+							background: url(../images/home/deco_border_b.png) center bottom no-repeat;
+							padding-bottom: 40px;
+							margin-bottom: 1rem;
+							font-weight: 300;
+							@include mq(tab) {
+								@include fsz(14);
+								background-size: auto 1rem;
+								padding-bottom: 1rem;
+							}
+							@include mq(sp) {
+								@include fsz(13);
+								background-size: auto 1rem;
+								padding-bottom: 1.5rem;
+								margin-bottom: .25rem;
+							}
+							color: #fff;
+						}
+						svg {
+							fill: $c_yel;
+							width: 68px;
+							height: 49px;
+							@include mq(min_max_w,1025px,1280px) {
+								width: 45px;
+								height: 32px;
+							}
+							@include mq(tab_sp) {
+								width: 34px;
+								height: 24px;
+							}
+							&.play {
+								width: 105px;
+								height: 45px;
+								@include mq(min_max_w,1025px,1280px) {
+									width: 70px;
+									height: 30px;
+								}
+								@include mq(tab_sp) {
+									width: 52px;
+									height: 22px;
+								}
+							}
+						}
+						h3 {
+							@include f_pat();
+							font-weight: normal;
+							color: $c_yel;
+							@include fsz(30);
+							@include mq(tab) {
+								@include fsz(24);
+							}
+							@include mq(sp) {
+								@include fsz(20);
+							}
+						}
+					}
+				}
+			}
+		}
+		.btn_basic {
+			max-width: 300px;
+			margin: 0 auto;
+			@include mq(sp) {
+				width: 80%;
+			}
+		}
+	}
+}
