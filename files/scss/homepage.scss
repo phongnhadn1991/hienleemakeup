@@ -11,7 +11,7 @@
 ----------------------------------------------------------- */
 .con_about {
 	padding-top: 10em;
-	margin-bottom: 2em;
+	margin-bottom: 4em;
 	.wrap_about {
 		display: flex;
 		justify-content: space-between;
@@ -44,6 +44,65 @@
 }
 
 /* -----------------------------------------------------------
+	.con_service
+----------------------------------------------------------- */
+.con_service {
+	padding: 3em 0 2em;
+	background: #f9f9f9;
+	border-top: 1px solid #f4f4f4;
+	border-bottom: 1px solid #f4f4f4;
+	.wrap_service {
+		width: 1820px;
+		max-width: 90%;
+		margin: auto;
+	}
+	.box_list {
+		display: flex;
+		justify-content: space-between;
+		flex-wrap: wrap;
+		&::before, &::after {
+			content: "";
+			display: block;
+			width: wCon(340px,1820px);
+			order: 1;
+			@include mq(sp) {
+				display: none;
+			}
+		}
+		.item {
+			text-align: center;
+			top: 0;
+			@include animate;
+			width: wCon(340px,1820px);
+			position: relative;
+			margin-bottom: 2em;
+			.box_txt {
+				position: absolute;
+				z-index: 2;
+				width: 100%;
+				bottom: 0;
+				left: 0;
+				padding: 1.5em .5em;
+				background: rgba(0,0,0,.6);
+				.txt_st {
+					@include f_pat();
+					@include fsz(19);
+					color: #fff;
+				}
+			}
+			&:hover {
+				top: -1em;
+				.box_txt {
+					.txt_st {
+						color: $c_yel;
+					}
+				}
+			}
+		}
+	}
+}
+
+/* -----------------------------------------------------------
 	.con_activity
 ----------------------------------------------------------- */
 .con_activity {
@@ -57,7 +116,7 @@
 		background-size: contain;
 		position: absolute;
 		left: 0;
-		top: 0;
+		top: 4em;
 	}
 	&::after {
 		content: "";
@@ -214,65 +273,6 @@
 			margin: 0 auto;
 			@include mq(sp) {
 				width: 80%;
-			}
-		}
-	}
-}
-
-/* -----------------------------------------------------------
-	.con_service
------------------------------------------------------------ */
-.con_service {
-	padding: 3em 0 2em;
-	background: #f9f9f9;
-	border-top: 1px solid #f4f4f4;
-	border-bottom: 1px solid #f4f4f4;
-	.wrap_service {
-		width: 1820px;
-		max-width: 90%;
-		margin: auto;
-	}
-	.box_list {
-		display: flex;
-		justify-content: space-between;
-		flex-wrap: wrap;
-		&::before, &::after {
-			content: "";
-			display: block;
-			width: wCon(340px,1820px);
-			order: 1;
-			@include mq(sp) {
-				display: none;
-			}
-		}
-		.item {
-			text-align: center;
-			top: 0;
-			@include animate;
-			width: wCon(340px,1820px);
-			position: relative;
-			margin-bottom: 2em;
-			.box_txt {
-				position: absolute;
-				z-index: 2;
-				width: 100%;
-				bottom: 0;
-				left: 0;
-				padding: 1.5em .5em;
-				background: rgba(0,0,0,.6);
-				.txt_st {
-					@include f_pat();
-					@include fsz(19);
-					color: #fff;
-				}
-			}
-			&:hover {
-				top: -1em;
-				.box_txt {
-					.txt_st {
-						color: $c_yel;
-					}
-				}
 			}
 		}
 	}

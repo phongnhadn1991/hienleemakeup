@@ -41,54 +41,7 @@
 		</div>
 	</section><!-- /.con_about -->
 
-	<section class="con_activity">
-		<article class="box_activity">
-			<ul>
-				<li class="js-inview anime-fade-in u-delay1">
-					<a href="#">
-						<p class="img"><img src="<?php echo location_file ?>images/home/img_activity1.jpg" alt="images"></p>
-						<div class="box_txt">
-							<p class="catch">Trang điểm sự kiện, <br> dự tiệc, cô dâu..</p>
-							<p class="img_ic"><img src="<?php echo location_file ?>images/home/icon_mk_1.png" alt="images"></p>
-							<h3>Makeup</h3>
-						</div>
-					</a>
-				</li>
-				<li class="js-inview anime-fade-in u-delay2">
-					<a href="#">
-						<p class="img"><img src="<?php echo location_file ?>images/home/img_activity2.jpg" alt="images"></p>
-						<div class="box_txt">
-							<p class="catch">Tham gia các sự kiện lớn <br> của HieenLee Makeup</p>
-							<p class="img_ic"><img src="<?php echo location_file ?>images/home/icon_mk_2.png" alt="images"></p>
-							<h3>HiềnLee Makeup</h3>
-						</div>
-					</a>
-				</li>
-				<li class="js-inview anime-fade-in u-delay3">
-					<a href="#">
-						<p class="img"><img src="<?php echo location_file ?>images/home/img_activity3.jpg" alt="images"></p>
-						<div class="box_txt">
-							<p class="catch">Đào tạo & hướng dẫn<br> chuyên nghiệp</p>
-							<p class="img_ic"><img src="<?php echo location_file ?>images/home/icon_mk_3.png" alt="images"></p>
-							<h3>Khóa học Makeup</h3>
-						</div>
-					</a>
-				</li>
-				<li class="js-inview anime-fade-in u-delay4">
-					<a href="#">
-						<p class="img"><img src="<?php echo location_file ?>images/home/img_activity4.jpg" alt="images"></p>
-						<div class="box_txt">
-							<p class="catch">Trải nghiệm thực tế <br> & việc làm</p>
-							<p class="img_ic"><img src="<?php echo location_file ?>images/home/icon_mk_4.png" alt="images"></p>
-							<h3>Việc làm</h3>
-						</div>
-					</a>
-				</li>
-			</ul>
-		</article><!-- /.box_activity -->
-	</section> <!-- /.con_activity -->
-
-	<section class="con_service">
+		<section class="con_service">
 		<div class="wrap_service">
 			<div class="box_head">
 				<h2 class="tit_st center">
@@ -149,7 +102,62 @@
 				</div>
 			</div>
 		</div>
-	</section>
+	</section><!-- /.con_service -->
+
+	<section class="con_activity">
+		<article class="box_activity">
+			<div class="box_head">
+				<h2 class="tit_st center">
+					<span class="sup">Khóa học trang điểm</span>
+					<span class="main">HiềnLee Makeup</span>
+				</h2>
+			</div>
+			<ul>
+				<li class="js-inview anime-fade-in u-delay1">
+					<a href="#">
+						<p class="img"><img src="<?php echo location_file ?>images/home/img_activity1.jpg" alt="images"></p>
+						<div class="box_txt">
+							<p class="catch">Trang điểm sự kiện, <br> dự tiệc, cô dâu..</p>
+							<p class="img_ic"><img src="<?php echo location_file ?>images/home/icon_mk_1.png" alt="images"></p>
+							<h3>Makeup <br>chuyên nghiệp</h3>
+						</div>
+					</a>
+				</li>
+				<li class="js-inview anime-fade-in u-delay2">
+					<a href="#">
+						<p class="img"><img src="<?php echo location_file ?>images/home/img_activity2.jpg" alt="images"></p>
+						<div class="box_txt">
+							<p class="catch">Tham gia các sự kiện lớn <br> của HieenLee Makeup</p>
+							<p class="img_ic"><img src="<?php echo location_file ?>images/home/icon_mk_2.png" alt="images"></p>
+							<h3>Makeup <br> cá nhân</h3>
+						</div>
+					</a>
+				</li>
+				<li class="js-inview anime-fade-in u-delay3">
+					<a href="#">
+						<p class="img"><img src="<?php echo location_file ?>images/home/img_activity3.jpg" alt="images"></p>
+						<div class="box_txt">
+							<p class="catch">Đào tạo & hướng dẫn<br> chuyên nghiệp</p>
+							<p class="img_ic"><img src="<?php echo location_file ?>images/home/icon_mk_3.png" alt="images"></p>
+							<h3>Makeup <br> cá nhân Vip</h3>
+						</div>
+					</a>
+				</li>
+				<li class="js-inview anime-fade-in u-delay4">
+					<a href="#">
+						<p class="img"><img src="<?php echo location_file ?>images/home/img_activity4.jpg" alt="images"></p>
+						<div class="box_txt">
+							<p class="catch">Trải nghiệm thực tế <br> & việc làm</p>
+							<p class="img_ic"><img src="<?php echo location_file ?>images/home/icon_mk_4.png" alt="images"></p>
+							<h3>Makeup <br> nâng cao</h3>
+						</div>
+					</a>
+				</li>
+			</ul>
+		</article><!-- /.box_activity -->
+	</section> <!-- /.con_activity -->
+
+
 
 <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br>
 <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br>
