@@ -8,22 +8,25 @@
 	.con_about
 ----------------------------------------------------------- */
 .con_about {
-	padding-top: 10em;
-	margin-bottom: 4em;
+	@include cV(padding-top,10em,2em);
+	@include cV(margin-bottom,4em,3em);
 	.wrap_about {
 		display: flex;
 		justify-content: space-between;
 		flex-wrap: wrap;
 		.box_left {
-			width: wCon(540px,1400px);
+			@include cV(width,wCon(540px,1400px),100%);
+			@include mq(sp) {
+				margin-bottom: 2em;
+			}
 			.box_txt {
 				.txt {
-					margin-bottom: 1.5em;
+					@include cV(margin-bottom,1.5em,1em);
 				}
 			}
 		}
 		.box_right {
-			width: wCon(800px,1400px);
+			@include cV(width, wCon(800px,1400px),100%);
 			.box_img {
 				display: flex;
 				justify-content: space-between;
@@ -33,7 +36,7 @@
 					position: relative;
 					&:first-child {
 						position: relative;
-						top: -4em;
+						@include cV(top, -4em, -2em, - .9em);
 					}
 				}
 			}
@@ -71,7 +74,7 @@
 			text-align: center;
 			top: 0;
 			@include animate;
-			width: wCon(340px,1820px);
+			@include cV(width, wCon(340px,1820px), 100%);
 			position: relative;
 			margin-bottom: 2em;
 			.box_txt {
@@ -80,19 +83,21 @@
 				width: 100%;
 				bottom: 0;
 				left: 0;
-				padding: 1.5em .5em;
+				@include cV(padding, 1.5em .5em,1em .5em);
 				background: rgba(0,0,0,.6);
 				.txt_st {
 					@include f_pat();
-					@include fsz(19);
-					color: #fff;
+					@include fsz-cha(19,18,18);
+					@include cV(color, #fff, $c_yel);
 				}
 			}
-			&:hover {
-				top: -1em;
-				.box_txt {
-					.txt_st {
-						color: $c_yel;
+			@include mq(pc_tab) {
+				&:hover {
+					top: -1em;
+					.box_txt {
+						.txt_st {
+							color: $c_yel;
+						}
 					}
 				}
 			}
@@ -108,8 +113,8 @@
 	position: relative;
 	&::before {
 		content: "";
-		width: 420px;
-		height: 404px;
+		@include cV(width, 420px,10em);
+		@include cV(height,404px, 9em);
 		background: url(../images/home/bg_leaf.png) no-repeat center;
 		background-size: contain;
 		position: absolute;
@@ -118,13 +123,13 @@
 	}
 	&::after {
 		content: "";
-		width: 420px;
-		height: 404px;
+		@include cV(width, 420px,10em);
+		@include cV(height,404px, 9em);
 		background: url(../images/home/bg_leaf.png) no-repeat center;
 		background-size: contain;
 		position: absolute;
 		right: 0;
-		bottom: 2em;
+		@include cV(bottom,2em,0);
 	}
 	.box_activity {
 		max-width: 1380px;
@@ -140,10 +145,12 @@
 		}
 		@include mq(sp) {
 			width: 100%;
+			max-width: 90%;
+			margin: auto;
 			padding: 3rem 0;
 		}
 		ul {
-			margin-bottom: 3rem;
+			@include cV(margin-bottom,3rem,2rem,1rem);
 			@include mq(pc_tab) {
 				width: 100%;
 				overflow: hidden;
@@ -159,6 +166,9 @@
 				@include mq(pc_tab) {
 					width: (100%/2-.5);
 					margin-bottom: 1%;
+				}
+				@include mq(sp) {
+					margin-bottom: .5em;
 				}
 				a {
 					display: block;
@@ -228,7 +238,7 @@
 								padding-bottom: 1rem;
 							}
 							@include mq(sp) {
-								@include fsz(13);
+								@include fsz(0);
 								background-size: auto 1rem;
 								padding-bottom: 1.5rem;
 								margin-bottom: .25rem;
@@ -245,8 +255,8 @@
 									height: 32px;
 								}
 								@include mq(tab_sp) {
-									width: 34px;
-									height: 24px;
+									width: 3em;
+									max-height: 2.5em;
 								}
 							}
 						}
@@ -280,7 +290,7 @@
 	.con_news
 ----------------------------------------------------------- */
 .con_news {
-	margin-bottom: 6em;
+	@include cV(margin-bottom,6em,3em);
 	.box_list {
 		display: flex;
 		justify-content: space-between;
@@ -295,7 +305,12 @@
 			}
 		}
 		.item {
-			width: wCon(480px,1500px);
+			@include cV(width,wCon(480px,1500px),100%);
+			@include mq(sp) {
+				&:not(:last-child) {
+					margin-bottom: 1.5em;
+				}
+			}
 			.box_img {
 				text-align: center;
 				margin-bottom: 1em;
@@ -303,8 +318,8 @@
 			.box_txt {
 				.txt_st {
 					font-weight: 500;
-					@include fsz(17);
-					white-space: nowrap;
+					@include fsz-cha(17,16,16);
+					@include cV(white-space,nowrap,inherit);
 					overflow: hidden;
 					text-overflow: ellipsis;
 					margin-bottom: .5em;
@@ -312,13 +327,16 @@
 				.p_info {
 					color: #888;
 					@include fsz(14);
-					margin-bottom: .8em;
+					@include cV(margin-bottom,.8em,0);
 					span {
 						margin-right: 1em;
 					}
 				}
 				.txt {
 					color: #444;
+					@include mq(sp) {
+						display: none;
+					}
 				}
 			}
 		}
@@ -333,8 +351,8 @@
 	max-width: 90%;
 	margin: auto;
 	.box_insta {
-		padding: 1em;
-		margin-bottom: 2em;
+		@include cV(padding,1em,.3em);
+		@include cV(margin-bottom,2em,1em);
 		background: $c_yel;
 		position: relative;
 	}
@@ -343,8 +361,8 @@
 		left: 50%;
 		top: 50%;
 		transform: translate(-50%, -50%);
-		width: 254px;
-		height: 224px;
+		@include cV(width,254px,10em);
+		@include cV(height,224px,8em);
 		z-index: 1;
 	}
 	#instafeed {
@@ -361,7 +379,7 @@
 			}
 		}
 		li {
-			width: (100% / 6);
+			@include cV(width, (100% / 6) , (100% / 3) );
 			max-height: 300px;
 			overflow: hidden;
 			a {

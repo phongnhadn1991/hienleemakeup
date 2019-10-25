@@ -35,7 +35,7 @@
 				</a>
 			</div>
 		</div>
-		<div class="box_link">
+		<div class="box_link view_pc-tab">
 			<div class="wrap_inner">
 				<div class="box_list">
 					<div class="box center">
@@ -98,7 +98,7 @@
 		</div>
 	</div><!-- /.con_ft_mid -->
 	<div class="con_ft_bot">
-		<div class="txt">© 2019 HienleeMakeup .<br class="view_sp"> All Rights Reserved. <a href="https://hienleemakeup.com/" target="_blank">HIỀN LEE MAKEUP ARTIST</a><br>Thiết kế bởi <a href="https://www.facebook.com/maicongngoan91" target="_blank">Mai Công Ngoãn</a></div>
+		<div class="txt">© 2019 HienleeMakeup.<br class="view_sp"> <span class="view_pc-tab">All Rights Reserved.</span> <a class="view_pc-tab" href="https://hienleemakeup.com/" target="_blank">HIỀN LEE MAKEUP ARTIST</a><br class="view_pc-tab"><span class="view_pc-tab">Thiết kế bởi <a href="https://www.facebook.com/maicongngoan91" target="_blank">Mai Công Ngoãn</a></span></div>
 	</div><!-- /.con_ft_bot -->
 </div><!-- /#footer -->
 <?php

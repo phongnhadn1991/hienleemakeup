@@ -14,8 +14,8 @@
 // Instafeed
 var feed = new Instafeed({
 	get: 'user',
-	userId: '9274688871',
-	accessToken:'9274688871.34475cd.6b419d4f6d1e4e469e562aff56c5eefe',
+	userId: '2322861418',
+	accessToken:'2322861418.1677ed0.7ef8507315c74d8a99c4c57615466952',
 	links: true,
 	limit: 12,
 	resolution:'low_resolution',
@@ -155,7 +155,7 @@ $(function(){
 					<a href="#">
 						<p class="img"><img src="<?php echo location_file ?>images/home/img_activity1.jpg" alt="images"></p>
 						<div class="box_txt">
-							<p class="catch">Trang điểm sự kiện, <br> dự tiệc, cô dâu..</p>
+							<p class="catch">Trang điểm sự kiện, <br class="view_pc-tab"> dự tiệc, cô dâu..</p>
 							<p class="img_ic"><img src="<?php echo location_file ?>images/home/icon_mk_1.png" alt="images"></p>
 							<h3>Makeup <br>chuyên nghiệp</h3>
 						</div>
@@ -165,7 +165,7 @@ $(function(){
 					<a href="#">
 						<p class="img"><img src="<?php echo location_file ?>images/home/img_activity2.jpg" alt="images"></p>
 						<div class="box_txt">
-							<p class="catch">Tham gia các sự kiện lớn <br> của HieenLee Makeup</p>
+							<p class="catch">Tham gia các sự kiện lớn <br class="view_pc-tab"> của HieenLee Makeup</p>
 							<p class="img_ic"><img src="<?php echo location_file ?>images/home/icon_mk_2.png" alt="images"></p>
 							<h3>Makeup <br> cá nhân</h3>
 						</div>
@@ -175,7 +175,7 @@ $(function(){
 					<a href="#">
 						<p class="img"><img src="<?php echo location_file ?>images/home/img_activity3.jpg" alt="images"></p>
 						<div class="box_txt">
-							<p class="catch">Đào tạo & hướng dẫn<br> chuyên nghiệp</p>
+							<p class="catch">Đào tạo & hướng dẫn<br class="view_pc-tab"> chuyên nghiệp</p>
 							<p class="img_ic"><img src="<?php echo location_file ?>images/home/icon_mk_3.png" alt="images"></p>
 							<h3>Makeup <br> cá nhân Vip</h3>
 						</div>
@@ -185,7 +185,7 @@ $(function(){
 					<a href="#">
 						<p class="img"><img src="<?php echo location_file ?>images/home/img_activity4.jpg" alt="images"></p>
 						<div class="box_txt">
-							<p class="catch">Trải nghiệm thực tế <br> & việc làm</p>
+							<p class="catch">Trải nghiệm thực tế <br class="view_pc-tab"> & việc làm</p>
 							<p class="img_ic"><img src="<?php echo location_file ?>images/home/icon_mk_4.png" alt="images"></p>
 							<h3>Makeup <br> nâng cao</h3>
 						</div>

@@ -2,7 +2,7 @@
 	<div class="con_gnav_top">
 		<div class="wrap_gnav_top">
 			<div class="box box_left">
-				<ul class="left">
+				<ul class="left view_pc-tab">
 					<li><i class="fas fa-home"></i> Hiền Lee Makeup</li>
 					<li><i class="fas fa-map-marker-alt"></i> 158 Lê Đình Lý, Thanh Khê Đà Nẵng</li>
 				</ul>
@@ -11,7 +11,7 @@
 				<div class="box_tel">
 					<a href="tel:0979669721" class="tel"><i class="fas fa-mobile-alt"></i> Hotline: 097.966.97.21</a>
 				</div>
-				<ul class="right">
+				<ul class="right view_pc-tab">
 					<li><a href="#" class="over"><i class="fab fa-instagram"></i></a></li>
 					<li><a href="#" class="over"><i class="fab fa-facebook-f"></i></a></li>
 					<li><a href="#" class="over"><i class="fas fa-envelope"></i></a></li>
