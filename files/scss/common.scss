@@ -382,6 +382,176 @@ body {
 
 // #footer
 #footer {
+  margin-top: 8em;
+  .con_ft_top {
+    @include cV(padding,2em 0 1.8em,1.5em 0);
+    background: #000;
+    .txt {
+      @include cW(1200px);
+      text-align: center;
+      color: $c_yel;
+      letter-spacing: .1em;
+      @include fsz-cha(16,16,14);
+      text-transform: uppercase;
+    }
+  }
+  .con_ft_mid {
+    background: #171717;
+    @include cV(padding,4em 0 3em,3em 0 2em,2em 0);
+    .wrap_inner {
+      @include cW(1200px);
+    }
+    .box_ft_m {
+      @include cW(960px);
+      max-width: 100%;
+      text-align: center;
+      .txt_top {
+        @include fsz-cha(24,20,18);
+        @include cV(margin-bottom,1em,1em);
+        color: $c_yel;
+        @include f_pat();
+        letter-spacing: .2em;
+      }
+      .txt {
+        color: $c_yel;
+        font-weight: 300;
+        margin-bottom: 1em;
+      }
+      .img_logo_ft {
+        @include cV(margin-bottom,1.5em,1em);
+      }
+      .txt_logo {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 1.5em;
+        span {
+          padding: 1px 4px;
+          border-radius: 2px 0 0 2px;
+          color: #fff;
+          background: #c5102f;
+          font-weight: bold;
+          @include fsz(14);
+          &:last-child {
+            border-radius: 0 2px 2px 0;
+            background: #fff;
+            color: #000;
+          }
+        }
+      }
+    }
+    .box_social {
+      position: relative;
+      @include cV(margin-bottom,2em,1em);
+      &::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 100%;
+        height: 1px;
+        background: $c_yel;
+        z-index: 2;
+      }
+      .inner {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        background: #171717;
+        padding: 2em 0;
+        position: relative;
+        z-index: 3;
+        @include cV(width,20%,40%,70%);
+        margin: auto;
+      }
+      a {
+        text-decoration: none;
+        .social_icon {
+          width: 30px;
+          margin: 0 .5em;
+        }
+      }
+    }
+    .box_link {
+      @include cV(margin-bottom,3em,1em);
+      .box_list {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        .box {
+          @include cV(padding,0 2em,0 2em,0 1em);
+          color: #e8e8e8;
+          line-height: 1.8;
+          @include mq(sp) {
+            width: 100%;
+            margin-bottom: 1.5em;
+          }
+          &.center {
+            @include cV(text-align,center,left);
+          }
+          .txt_st {
+            margin-bottom: .4em;
+            @include fsz(17);
+            font-weight: 500;
+            color: $c_yel;
+          }
+          ul {
+            li {
+              a {
+                text-decoration: none;
+                color: #e8e8e8;
+                &:hover {
+                  text-decoration: underline;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    .box_ft_menu {
+      ul {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        li {
+          @include cV(padding,0 1em,0 .5em);
+          @include cV(line-height,1.5,1.2);
+          border-right: 1px solid #afacac;
+          @include mq(sp) {
+            margin-bottom: .8em;
+          }
+          &:last-child {
+            border-right: 0;
+          }
+          a {
+            text-decoration: none;
+            color: #e8e8e8;
+            &:hover {
+              text-decoration: underline;
+            }
+          }
+        }
+      }
+    }
+  }
+  .con_ft_bot {
+    background: $c_yel;
+    @include cV(padding,1em 0,1.5em 0);
+    .txt {
+      @include cW(1200px);
+      text-align: center;
+      color: #444;
+      a {
+        text-decoration: none;
+        color: #444;
+        &:hover {
+          text-decoration: underline;
+          color: #000;
+        }
+      }
+    }
+  }
 }
 
 // 下層共通スタイル

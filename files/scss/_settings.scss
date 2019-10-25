@@ -333,3 +333,9 @@ $c_Gold: #a08b5b;
   -o-transition: $s;
   transition: $s;
 }
+
+@mixin cW($width) {
+  max-width: $width;
+  width: 95%;
+  margin: auto;
+}

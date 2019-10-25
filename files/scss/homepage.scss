@@ -1,8 +1,6 @@
 @charset "utf-8";
 // CSS information
 //  file name  : homepage.css
-//  author     : Abilive
-//  style info : トップページ
 @import "settings";
 
 
@@ -275,5 +273,120 @@
 				width: 80%;
 			}
 		}
+	}
+}
+
+/* -----------------------------------------------------------
+	.con_news
+----------------------------------------------------------- */
+.con_news {
+	margin-bottom: 6em;
+	.box_list {
+		display: flex;
+		justify-content: space-between;
+		flex-wrap: wrap;
+		&::before, &::after {
+			content: "";
+			display: block;
+			width: wCon(480px,1500px);
+			order: 1;
+			@include mq(sp) {
+				display: none;
+			}
+		}
+		.item {
+			width: wCon(480px,1500px);
+			.box_img {
+				text-align: center;
+				margin-bottom: 1em;
+			}
+			.box_txt {
+				.txt_st {
+					font-weight: 500;
+					@include fsz(17);
+					white-space: nowrap;
+					overflow: hidden;
+					text-overflow: ellipsis;
+					margin-bottom: .5em;
+				}
+				.p_info {
+					color: #888;
+					@include fsz(14);
+					margin-bottom: .8em;
+					span {
+						margin-right: 1em;
+					}
+				}
+				.txt {
+					color: #444;
+				}
+			}
+		}
+	}
+}
+
+/* -----------------------------------------------------------
+	.con_insta
+----------------------------------------------------------- */
+.con_insta {
+	width: 1800px;
+	max-width: 90%;
+	margin: auto;
+	.box_insta {
+		padding: 1em;
+		margin-bottom: 2em;
+		background: $c_yel;
+		position: relative;
+	}
+	h3 {
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		transform: translate(-50%, -50%);
+		width: 254px;
+		height: 224px;
+		z-index: 1;
+	}
+	#instafeed {
+		display: flex;
+		justify-content: space-between;
+		flex-wrap: wrap;
+		&::before, &::after {
+			content: "";
+			display: block;
+			width: (100% / 6);
+			order: 1;
+			@include mq(sp) {
+				display: none;
+			}
+		}
+		li {
+			width: (100% / 6);
+			max-height: 300px;
+			overflow: hidden;
+			a {
+				padding-bottom: 100%;
+				display: block;
+				cursor: pointer;
+				position: relative;
+			}
+			img {
+				position: absolute;
+			}
+			&.img_in {
+				img {
+					max-width: none;
+					left: 50%;
+					top: 0;
+					bottom: 0;
+					height: 100%;
+					transform: translateX(-50%);
+				}
+			}
+		}
+	}
+	.box_btn {
+		width: 100%;
+		text-align: center;
 	}
 }

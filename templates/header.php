@@ -45,10 +45,7 @@
 		<p class="scroll view_pc"><a href="#contents">Scroll</a></p>
 		<div class="box_slider js_slider_main">
 			<div class="box">
-				<img src="<?php echo location_file ?>/images/home-slider-3.jpg" alt="images">
-			</div>
-			<div class="box">
-				<img data-lazy="<?php echo location_file ?>/images/home-slider-1.jpg" alt="images">
+				<img data-lazy="<?php echo location_file ?>/images/home-slider-2.jpg" alt="images">
 			</div>
 			<div class="box">
 				<img data-lazy="<?php echo location_file ?>/images/home-slider-3.jpg" alt="images">
