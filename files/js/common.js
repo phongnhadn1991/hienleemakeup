@@ -17,6 +17,47 @@ $(function () {
 		$(this).addClass('js-inview-in');
 	});
 
+
+	// BUTTON MENU SP
+	$('.btn_menu').click(function(){
+		$('.con_sp_nav').slideToggle('200');
+		$(this).toggleClass('btn-open').toggleClass('btn-close');
+		if($(this).hasClass('btn-open')){
+			$(this).find('.txt').text('ĐÓNG');
+		}else {
+			$(this).find('.txt').text('MENU');
+		}
+	});
+		// MARGIN TOP
+		function marginTop_con_pgtitle(){
+			var height_Conheader = $('.con_header').innerHeight();
+			$('.con_pgtitle').css('margin-top',-height_Conheader);
+		}
+		marginTop_con_pgtitle();
+		// PADDING TOP
+		function paddingTop_NavMenu(){
+			var height_Menusp = $('.con_fix_nav').innerHeight();
+			$('#abi_page').css('padding-bottom',height_Menusp);
+			$('.con_sp_nav').css('padding-bottom',height_Menusp);
+		}
+		paddingTop_NavMenu()+
+
+		$w.superResize({
+			//resize
+			loadAction : false,
+			resizeAfter : function(){
+				marginTop_con_pgtitle();
+				paddingTop_NavMenu();
+			}
+		}).firstLoad({
+			//firstLoad
+			pc_tab : function(){
+			},
+			sp : function(){
+				paddingTop_NavMenu()
+			}
+		});
+
 	// smoothScroll ---------------------------//
 	var speed = 1000,
 		easing = 'swing',

@@ -116,11 +116,11 @@ body {
 // #header
 #header {
   .con_gnav_top {
-    height: 40px;
+    @include cV(height,40px,2.7em);
     background: $c_yel;
     .wrap_gnav_top {
       width: 1380px;
-      max-width: 95%;
+      @include cV(max-width,95%,90%);
       height: 100%;
       margin: auto;
       display: flex;
@@ -158,12 +158,21 @@ body {
         &.left {
           li {
              margin-right: 1em;
+             @include mq(tab) {
+              @include fsz(14);
+             }
              &:last-child {
               margin-right: 0;
+             }
+             @include mq(max_w,1050px) {
+              &:first-child {display: none;}
              }
           }
         }
         &.right {
+          @include mq(max_w,1050px) {
+            display: none;
+          }
           li {
              margin-left: .4em;
              &:first-child {
@@ -199,17 +208,23 @@ body {
     position: relative;
     z-index: 2;
     height: 80px;
+    @include mq(min_max_w,768px,1050px) {
+      height: 50px;
+    }
     box-shadow: 0 6px 6px 0 rgba(0,0,0,.05);
     @include mq(sp) {
       height: 5px;
     }
     .wrap_gnav {
       width: 1500px;
-      max-width: 95%;
+      @include cV(max-width,95%,90%);
       margin: auto;
       position: relative;
       .box_logo {
-        width: 170px;
+        @include cV(width,170px,140px,5em);
+        @include mq(min_max_w,768px,1050px) {
+          width: 120px;
+        }
         margin: auto;
         position: absolute;
         top: -40px;
@@ -253,6 +268,9 @@ body {
         flex-wrap: wrap;
         align-content: center;
         height: 80px;
+        @include mq(min_max_w,768px,1050px) {
+          height: 50px;
+        }
         @include mq(sp) {
           display: none;
         }
@@ -266,15 +284,27 @@ body {
             justify-content: flex-end;
           }
           li {
-            padding: 0 2em;
+            @include cV(padding,0 2em,0 1em,0 1em);
             a {
               display: block;
               height: 100%;
               @include f_pat();
-              @include fsz(22);
+              @include fsz-cha(22,18,18);
               @include animate;
               &:hover {
                 color: $c_yel;
+              }
+            }
+            @include mq(min_max_w,1200px,1490px) {
+              padding: 0 1em;
+              a {
+                @include fsz(19);
+              }
+            }
+            @include mq(min_max_w,768px,1050px) {
+              padding: 0 .5em;
+              a {
+                @include fsz(15);
               }
             }
           }
@@ -287,7 +317,7 @@ body {
     &::before {
       display: block;
       width: 200%;
-      height: 44px;
+      @include cV(height,44px,1.2em);
       content: "";
       position: absolute;
       bottom: 0;
@@ -298,11 +328,16 @@ body {
       -moz-animation: wave 120s infinite;
       -webkit-animation: wave 120s infinite;
       animation: wave 120s infinite;
+      @include mq(sp) {
+        -moz-animation: wave 40s infinite;
+        -webkit-animation: wave 40s infinite;
+        animation: wave 40s infinite;
+      }
     }
     &::after {
       display: block;
       width: 200%;
-      height: 52px;
+      @include cV(height,52px,1.7em);
       content: "";
       position: absolute;
       bottom: 0;
@@ -313,6 +348,11 @@ body {
       -moz-animation: wave 80s infinite;
       -webkit-animation: wave 80s infinite;
       animation: wave 80s infinite;
+      @include mq(sp) {
+        -moz-animation: wave 20s infinite;
+        -webkit-animation: wave 20s infinite;
+        animation: wave 20s infinite;
+      }
     }
     .scroll {
       position: absolute;
@@ -392,16 +432,16 @@ body {
 
 // #footer
 #footer {
-  @include cV(margin-top,8em,4em);
+  @include cV(margin-top,8em,5em,4em);
   .con_ft_top {
-    @include cV(padding,2em 0 1.8em,1.5em 0);
+    @include cV(padding,2em 0 1.8em,1em .5em);
     background: #000;
     .txt {
       @include cW(1200px);
       text-align: center;
       color: $c_yel;
-      letter-spacing: .1em;
-      @include fsz-cha(16,16,14);
+      @include cV(letter-spacing,.1em,.05em);
+      @include fsz-cha(16,16,13);
       text-transform: uppercase;
     }
   }
@@ -451,7 +491,7 @@ body {
     }
     .box_social {
       position: relative;
-      @include cV(margin-bottom,2em,1em);
+      @include cV(margin-bottom,2em,1em,1em);
       &::after {
         content: "";
         position: absolute;
@@ -468,7 +508,7 @@ body {
         justify-content: center;
         flex-wrap: wrap;
         background: #171717;
-        @include cV(padding, 2em 0, 1em 0);
+        @include cV(padding, 2em 0,1em 0, 1em 0);
         position: relative;
         z-index: 3;
         @include cV(width,20%,40%,70%);
@@ -498,6 +538,12 @@ body {
           }
           &.center {
             @include cV(text-align,center,left);
+          }
+          &.contact_ft {
+            @include mq(min_max_w,768px,1024px) {
+              width: 100%;
+              margin-bottom: 2em;
+            }
           }
           .txt_st {
             margin-bottom: .4em;
@@ -558,6 +604,113 @@ body {
         &:hover {
           text-decoration: underline;
           color: #000;
+        }
+      }
+    }
+  }
+}
+
+/* -----------------------------------------------------------
+  .con_fix_nav SP
+----------------------------------------------------------- */
+.con_fix_nav {
+  padding-bottom: env(safe-area-inset-bottom);
+  background: #0c0c0c;
+  @include mq(pc) {
+    display: none;
+  }
+  @include mq(sp) {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    display: -webkit-flex;
+    display: flex;
+    z-index: 100;
+  }
+  li {
+    color: #fff;
+    width: (100%/5);
+    @include mq(tab) {
+      border-left: 1px solid rgba(#fff, .15);
+      &:first-child {
+        border-left: none;
+      }
+    }
+    a {
+      color: $c_yel;
+      text-align: center;
+      display: block;
+      padding: .6em 0;
+      i {
+        display: block;
+        line-height: 1;
+        @include fsz(22);
+      }
+      .txt {
+        color: $c_yel;
+        @include fsz-cha(14,14,10);
+        @include mq(sp) {
+         @include fsz(10);
+        }
+      }
+    }
+    &.btn_menu {
+      &.btn-open {
+        .ion-drag:before {
+          content: "\f12a";
+        }
+      }
+    }
+    &.box_reservation {
+      // background: $c_yel;
+    }
+  }
+}
+
+/* -----------------------------------------------------------
+  .con_sp_nav SP
+----------------------------------------------------------- */
+.con_sp_nav {
+  width: 100%;
+  height: 100%;
+  background: #1f1f1f;
+  overflow-y: scroll;
+  max-width: 100%;
+  padding-right: 1em;
+  padding-left: 1em;
+  padding-top: 1em;
+  box-sizing: border-box;
+  margin: auto;
+  position: fixed;
+  z-index: 99;
+  display: none;
+  top: 0;
+  left: 0;
+  .box_btn {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-bottom: .8em;
+    .btn_basic {
+      width: 48.5%;
+    }
+  }
+  .btn_tel {
+    margin-bottom: 2em;
+  }
+  nav {
+    padding-bottom: 2em;
+    ul {
+      li {
+        border-bottom: 1px solid #2f2f2f;
+        a {
+          color: #fff;
+          padding: .67em .6em;
+          display: block;
+          @include f_pat();
+          @include fsz(18);
+          letter-spacing: .05em;
         }
       }
     }

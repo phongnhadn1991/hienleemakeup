@@ -136,8 +136,8 @@
 		top: 0;
 		left: 0;
 		right: 0;
-		@include cV(width,44px,2em);
-		@include cV(height,44px,2em);
+		@include cV(width,44px,2.2em,2em);
+		@include cV(height,44px,2.2em,2em);
 		background-size: contain;
 		-webkit-animation: spin 4s infinite linear;
 	}
@@ -148,11 +148,11 @@
 	}
 	.sub, .sup {
 		display: block;
-		@include fsz-cha(20,18,15);
+		@include fsz-cha(20,16,15);
 		text-transform: uppercase;
 	}
 	&.center {
-		@include cV(padding-top, 3.7em, 2.5em);
+		@include cV(padding-top, 3.7em,3em, 2.5em);
 		text-align: center;
 		&::before {
 			top: 0;
@@ -165,7 +165,10 @@
 
 // Text
 .txt {
-	@include cV(line-height,1.8,1.6);
+	@include cV(line-height,1.8,1.6,1.6);
+	@include mq(tab) {
+		@include fsz(14);
+	}
 	color: #444;
 }
 
@@ -456,4 +459,48 @@
 			}
 		}
 	}
+}
+
+
+
+
+// btn_basic
+.btn_basic {
+  border-radius: 4px;
+  background: $c_yel;
+  a {
+    text-align: center;
+    color: #fff;
+    width: 100%;
+    box-sizing: border-box;
+    @include cV(padding,10px,.8em .2em);
+    min-height: 62px;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    @include over();
+  }
+  &.btn_tel {
+    background: #000;
+    @include cV(margin-bottom,20px,1em);
+    strong {
+      display: block;
+      &.txt_tel {
+        @include fsz-cha(24,22,22);
+        font-weight: normal;
+        line-height: 1;
+        color: $c_yel;
+        @include f_pat();
+        .fas {
+          @include cV(margin-right,15px,.3em);
+          @include fsz-cha(15,15,14);
+        }
+      }
+      &.txt_time {
+        font-weight: 300;
+        @include fsz-cha(12,10,13);
+      }
+    }
+  }
 }

@@ -8,7 +8,7 @@
 	.con_about
 ----------------------------------------------------------- */
 .con_about {
-	@include cV(padding-top,10em,2em);
+	@include cV(padding-top,10em,6em,2em);
 	@include cV(margin-bottom,4em,3em);
 	.wrap_about {
 		display: flex;
@@ -64,7 +64,7 @@
 		&::before, &::after {
 			content: "";
 			display: block;
-			width: wCon(340px,1820px);
+			@include cV(width, wCon(340px,1820px), 32%, 49%);
 			order: 1;
 			@include mq(sp) {
 				display: none;
@@ -74,22 +74,28 @@
 			text-align: center;
 			top: 0;
 			@include animate;
-			@include cV(width, wCon(340px,1820px), 100%);
+			@include cV(width, wCon(340px,1820px), 32%, 49%);
 			position: relative;
-			margin-bottom: 2em;
+			@include cV(margin-bottom,2em,1em,.5em);
 			.box_txt {
 				position: absolute;
 				z-index: 2;
 				width: 100%;
 				bottom: 0;
 				left: 0;
-				@include cV(padding, 1.5em .5em,1em .5em);
+				@include cV(padding, 1.5em .5em,1em .3em,1em .5em);
 				background: rgba(0,0,0,.6);
 				.txt_st {
 					@include f_pat();
-					@include fsz-cha(19,18,18);
+					@include fsz-cha(19,16,15);
 					@include cV(color, #fff, $c_yel);
+					@include cV(white-space,nowrap,nowrap);
+					overflow: hidden;
+					text-overflow: ellipsis;
 				}
+			}
+			.box_img {
+				text-align: center;
 			}
 			@include mq(pc_tab) {
 				&:hover {
@@ -204,7 +210,7 @@
 							padding-top: 5%;
 						}
 						@include mq(tab) {
-							padding-top: 6%;
+							padding-top: 5%;
 						}
 						@include mq(sp) {
 							padding-top: 5%;
@@ -266,7 +272,7 @@
 							color: $c_yel;
 							@include fsz(24);
 							@include mq(tab) {
-								@include fsz(20);
+								@include fsz(18);
 							}
 							@include mq(sp) {
 								@include fsz(18);
@@ -290,7 +296,7 @@
 	.con_news
 ----------------------------------------------------------- */
 .con_news {
-	@include cV(margin-bottom,6em,3em);
+	@include cV(margin-bottom,6em,4em,3em);
 	.box_list {
 		display: flex;
 		justify-content: space-between;
@@ -361,8 +367,8 @@
 		left: 50%;
 		top: 50%;
 		transform: translate(-50%, -50%);
-		@include cV(width,254px,10em);
-		@include cV(height,224px,8em);
+		@include cV(width,254px,10em,10em);
+		@include cV(height,224px,8em,8em);
 		z-index: 1;
 	}
 	#instafeed {
